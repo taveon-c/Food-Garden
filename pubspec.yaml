@@ -1,0 +1,39 @@
+name: flutter_application
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_mobile_ads: ^5.2.0
+  intl: ^0.20.1
+  path: ^1.9.0
+  sqflite: ^2.4.1
+  sqflite_common_ffi: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: "^0.14.3"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/FoodGardenAppLogo.png"
+  adaptive_icon_background: "#13A013"
+  adaptive_icon_foreground: "assets/logo_foreground.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+
+fonts:
+  - family: Nunito
+    fonts:
+      - asset: fonts\Nunito-Regular.ttf
