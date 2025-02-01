@@ -11,19 +11,19 @@ class Plant {
   Plant(this.name, this.date, this.id);
 
   double getProgress(){
-    var timeElapsed = DateTime.now().difference(DateTime.parse(date)).inDays;
+    var timeElapsed = DateTime.now().difference(DateTime.parse(date)).inSeconds;
     var growthTime = plantVarieties[name]?['harvest'];
     return min(timeElapsed/growthTime, 1.0);
   }
 
   int getDaysLeft() {
-    var timeElapsed = DateTime.now().difference(DateTime.parse(date)).inDays;
+    var timeElapsed = DateTime.now().difference(DateTime.parse(date)).inSeconds;
     var growthTime = plantVarieties[name]?['harvest'];
     return max(growthTime - timeElapsed, 0);
   }
 
   bool shouldWater() {
-    if (getDaysLeft() % plantVarieties[name]?['water'] == 0) {
+    if (getDaysLeft() % plantVarieties[name]?['water'] == 0 || getProgress() == 0.0) {
       return true;
     } else {
       return false;

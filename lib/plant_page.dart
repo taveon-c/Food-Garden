@@ -59,19 +59,21 @@ Harvest''';
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+            toolbarHeight: 70,
             leading: BackButton(color: Colors.white),
-            title: Text(widget.plant.name, style: TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 50)),
+            title: Text(widget.plant.name, style: TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 40)),
             backgroundColor: const Color.fromARGB(255, 19, 160, 19)),
         body: Center(
           child: ListView(
+            padding: EdgeInsets.all(8.0),
             children: [
               Expanded(
                 child: Stack(
                   alignment: AlignmentDirectional.center,
                   children: [
                     SizedBox(
-                      width: 350,
-                      height: 350,
+                      width: 500,
+                      height: 500,
                       child: CircularProgressIndicator(
                           value: widget.plant.getProgress(),
                           strokeWidth: 10,
@@ -90,28 +92,25 @@ Harvest''';
                 ),
               ),
               Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Column(
-                    spacing: 8.0,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Divider(color: Colors.black, thickness: 2.0),
-                      Text('Plant Recommendations/Info', style: TextStyle(color: Colors.black, fontFamily: 'Nunito', fontSize: 35.0)),
-                      Divider(color: Colors.black, thickness: 2.0),
-                      InfoAttribute(attribute: 'Soil Temperature:', attributeVal: soilTemp),
-                      Divider(height: 2.0),
-                      InfoAttribute(attribute: 'Watering Interval:', attributeVal: water),
-                      Divider(height: 2.0),
-                      InfoAttribute(attribute: 'Sun Exposure:', attributeVal: sun),
-                      Divider(height: 2.0),
-                      InfoAttribute(attribute: 'Air Temperature:', attributeVal: ambientTemp),
-                      Divider(height: 2.0),
-                      InfoAttribute(attribute: 'Growth Period:', attributeVal: harvest),
-                      Divider(height: 2.0),
-                      InfoAttribute(attribute: 'Planted:', attributeVal: DateFormat.yMd().format(DateTime.parse(widget.plant.date))),
-                    ],
-                  ),
+                child: Column(
+                  spacing: 8.0,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Divider(color: Colors.black, thickness: 2.0),
+                    Text('Plant Recommendations/Info', style: TextStyle(color: Colors.black, fontFamily: 'Nunito', fontSize: 35.0)),
+                    Divider(color: Colors.black, thickness: 2.0),
+                    InfoAttribute(attribute: 'Soil Temperature:', attributeVal: soilTemp),
+                    Divider(height: 2.0, indent: 4, endIndent: 10),
+                    InfoAttribute(attribute: 'Watering Interval:', attributeVal: water),
+                    Divider(height: 2.0, indent: 4, endIndent: 10),
+                    InfoAttribute(attribute: 'Sun Exposure:', attributeVal: sun),
+                    Divider(height: 2.0, indent: 4, endIndent: 10),
+                    InfoAttribute(attribute: 'Air Temperature:', attributeVal: ambientTemp),
+                    Divider(height: 2.0, indent: 4, endIndent: 10),
+                    InfoAttribute(attribute: 'Growth Period:', attributeVal: harvest),
+                    Divider(height: 2.0, indent: 4, endIndent: 10),
+                    InfoAttribute(attribute: 'Planted:', attributeVal: DateFormat.yMd().format(DateTime.parse(widget.plant.date))),
+                  ],
                 )
               )
           ]),

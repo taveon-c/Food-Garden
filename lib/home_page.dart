@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                     _timer.cancel();
                     return ListView.separated(
                       itemCount: snapshot.data!.length,
-                      separatorBuilder: (BuildContext context, int index) => Divider(height: 1),
+                      separatorBuilder: (BuildContext context, int index) => Divider(height: 1, indent: 20, endIndent: 20,),
                       itemBuilder: (context, index) {
                         Plant plant = Plant(
                             snapshot.data![index]['name'],

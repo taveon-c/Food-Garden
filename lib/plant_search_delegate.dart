@@ -60,7 +60,7 @@ class PlantSearchDelegate extends SearchDelegate {
       color: const Color.fromARGB(255, 255, 255, 255),
       child: ListView.separated(
         itemCount: matchQuery.length,
-        separatorBuilder: (BuildContext context, int index) => Divider(height: 1),
+        separatorBuilder: (BuildContext context, int index) => Divider(height: 1, indent: 20, endIndent: 20,),
         itemBuilder: (context, index) {
           String result = matchQuery[index];
           return ListTile(
