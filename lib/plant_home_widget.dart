@@ -7,10 +7,10 @@ import 'package:flutter_application/plants_dict.dart';
 
 class PlantWidget extends StatefulWidget {
   final Plant plant;
-  final SqlDb _sqldb;
+  final GardenDB _gardenDB;
   final Function pressHandler;
 
-  const PlantWidget(this.plant, this._sqldb, this.pressHandler, {super.key});
+  const PlantWidget(this.plant, this._gardenDB, this.pressHandler, {super.key});
 
   @override
   State<PlantWidget> createState() => _PlantWidgetState();
@@ -21,7 +21,7 @@ class _PlantWidgetState extends State<PlantWidget> {
   late IconData progressIcon;
 
   deleteData() async {
-    var response = await widget._sqldb
+    var response = await widget._gardenDB
         .deleteData('DELETE FROM plants WHERE id = ${widget.plant.id}');
     return response;
   }
@@ -48,7 +48,7 @@ class _PlantWidgetState extends State<PlantWidget> {
         child: Row(
           spacing: 10.0,
           children: [
-            Icon(progressIcon, color: progressColor, size: 25.0),
+            Icon(progressIcon, color: progressColor, size: 35.0),
             Expanded(
               child: Column(
                 spacing: 10.0,
@@ -59,12 +59,12 @@ class _PlantWidgetState extends State<PlantWidget> {
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontFamily: 'Nunito',
-                      fontSize: 14,
+                      fontSize: 20,
                       color: Colors.black,
                     )
                   ),
                   SizedBox(
-                    width: plantVarieties[widget.plant.name]?['harvest'].toDouble()*2.5,
+                    width: plantVarieties[widget.plant.name]?['harvest'].toDouble()*5,
                     child: LinearProgressIndicator(
                       value: widget.plant.getProgress(),
                       color: progressColor,
@@ -118,7 +118,7 @@ class _PlantWidgetState extends State<PlantWidget> {
                       ],
                       contentPadding: EdgeInsets.all(20.0),
                       content: Text(
-    'Do you want to remove ${widget.plant.name}? You will not be able to undo this action',
+    'Do you want to remove ${widget.plant.name}? \nYou will not be able to undo this action',
                       style: TextStyle(fontFamily: 'Nunito',)
                       )
                   )

@@ -14,12 +14,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final SqlDb _sqldb = SqlDb();
+  final GardenDB _gardenDB = GardenDB.instance;
   final SearchController controller = SearchController();
   late Timer _timer;
 
   readData() async {
-    var plants = await _sqldb.readData('SELECT * FROM plants');
+    var plants = await _gardenDB.readData('SELECT * FROM plants');
     return plants;
   }
 
@@ -43,9 +43,10 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          leadingWidth: 45,
+          leadingWidth: 60,
+          toolbarHeight: 70,
           leading: const Image(image: AssetImage('assets/FoodGardenAppLogo.png')),
-          title: Text('Food Garden', style: TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 25)),
+          title: Text('Food Garden', style: TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 40)),
           backgroundColor: const Color.fromARGB(255, 19, 160, 19),
         ),
         body: Column(
@@ -61,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   );
                   if (plantName != null) {
                     setState(() {
-                      _sqldb.insertData('''
+                      _gardenDB.insertData('''
                   INSERT INTO plants(name, date) VALUES("$plantName","${DateTime.now().toString()}")
                     ''');
                     });
@@ -89,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                             setState(() {});
                           });
                         }
-                        return PlantWidget(plant, _sqldb, setState);
+                        return PlantWidget(plant, _gardenDB, setState);
                       },
                     );
                   } else {

@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/database.dart';
 import 'package:flutter_application/home_page.dart';
 
 void main() async {
-  //WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+  GardenDB gardenDB = GardenDB.instance;
+  gardenDB.initialDb();
   runApp(MaterialApp(
       theme: ThemeData(
           textSelectionTheme: TextSelectionThemeData(

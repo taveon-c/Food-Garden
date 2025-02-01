@@ -60,10 +60,10 @@ Harvest''';
         backgroundColor: Colors.white,
         appBar: AppBar(
             leading: BackButton(color: Colors.white),
-            title: Text(widget.plant.name, style: TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 25)),
+            title: Text(widget.plant.name, style: TextStyle(color: Colors.white, fontFamily: 'Nunito', fontSize: 50)),
             backgroundColor: const Color.fromARGB(255, 19, 160, 19)),
         body: Center(
-          child: Column(
+          child: ListView(
             children: [
               Expanded(
                 child: Stack(
@@ -82,8 +82,8 @@ Harvest''';
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(progress, textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Nunito', fontSize: 35)),
-                        Icon(progressIcon, color: progressColor, size: 50.0)
+                        Text(progress, textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Nunito', fontSize: 40)),
+                        Icon(progressIcon, color: progressColor, size: 60.0)
                       ],
                     )
                   ],
@@ -97,7 +97,7 @@ Harvest''';
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Divider(color: Colors.black, thickness: 2.0),
-                      Text('Plant Recommendations/Info', style: TextStyle(color: Colors.black, fontFamily: 'Nunito', fontSize: 25.0)),
+                      Text('Plant Recommendations/Info', style: TextStyle(color: Colors.black, fontFamily: 'Nunito', fontSize: 35.0)),
                       Divider(color: Colors.black, thickness: 2.0),
                       InfoAttribute(attribute: 'Soil Temperature:', attributeVal: soilTemp),
                       Divider(height: 2.0),
@@ -135,12 +135,12 @@ class InfoAttribute extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Nunito',
-                    fontSize: 20.0))),
+                    fontSize: 30.0))),
         Expanded(
             child: Text(attributeVal,
             textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Colors.black, fontFamily: 'Nunito', fontSize: 20.0)))
+                    color: Colors.black, fontFamily: 'Nunito', fontSize: 30.0)))
       ],
     );
   }
