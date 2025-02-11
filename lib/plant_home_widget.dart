@@ -64,7 +64,7 @@ class _PlantWidgetState extends State<PlantWidget> {
                     )
                   ),
                   SizedBox(
-                    width: plantVarieties[widget.plant.name]?['harvest'].toDouble()*5,
+                    width: plantVarieties[widget.plant.name]?['harvest'].toDouble()*4,
                     child: LinearProgressIndicator(
                       value: widget.plant.getProgress(),
                       color: progressColor,
@@ -74,55 +74,53 @@ class _PlantWidgetState extends State<PlantWidget> {
                 ],
               ),
             ),
-            Expanded(
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: IconButton(
-                  color: Colors.black,
-                  onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                          backgroundColor: Colors.white,
-                          title: Text(widget.plant.name, style: TextStyle(fontFamily: 'Nunito',)),
-                          actions: [
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                  overlayColor:
-                                      CupertinoColors.secondarySystemFill),
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text(
-                                'cancel',
-                                style:
-                                    TextStyle(color: CupertinoColors.inactiveGray, fontFamily: 'Nunito',),
-                              ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                color: Colors.black,
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                        backgroundColor: Colors.white,
+                        title: Text(widget.plant.name, style: TextStyle(fontFamily: 'Nunito',)),
+                        actions: [
+                          TextButton(
+                            style: TextButton.styleFrom(
+                                overlayColor:
+                                    CupertinoColors.secondarySystemFill),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'cancel',
+                              style:
+                                  TextStyle(color: CupertinoColors.inactiveGray, fontFamily: 'Nunito',),
                             ),
-                            TextButton(
-                              style: TextButton.styleFrom(
-                                  overlayColor: CupertinoColors.systemRed),
-                              child: Text(
-                                'remove',
-                                style: TextStyle(color: CupertinoColors.systemRed, fontFamily: 'Nunito',),
-                              ),
-                              onPressed: () {
-                                deleteData();
-                                widget.pressHandler(() {});
-                                Navigator.pop(context);
-                              },
-                            )
-                          ],
-                          contentPadding: EdgeInsets.all(20.0),
-                          content: Text(
-                    'Do you want to remove ${widget.plant.name}? \nYou will not be able to undo this action',
-                          style: TextStyle(fontFamily: 'Nunito',)
+                          ),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                                overlayColor: CupertinoColors.systemRed),
+                            child: Text(
+                              'remove',
+                              style: TextStyle(color: CupertinoColors.systemRed, fontFamily: 'Nunito',),
+                            ),
+                            onPressed: () {
+                              deleteData();
+                              widget.pressHandler(() {});
+                              Navigator.pop(context);
+                            },
                           )
-                      )
-                    );
-                  }, 
-                  icon: const Icon(Icons.delete, size: 30.0, color: Colors.black,)
-                ),
+                        ],
+                        contentPadding: EdgeInsets.all(20.0),
+                        content: Text(
+                  'Do you want to remove ${widget.plant.name}? \nYou will not be able to undo this action',
+                        style: TextStyle(fontFamily: 'Nunito',)
+                        )
+                    )
+                  );
+                }, 
+                icon: const Icon(Icons.delete, size: 30.0, color: Colors.black,)
               ),
             )
           ],

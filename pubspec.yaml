@@ -19,6 +19,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  msix: ^3.16.8
 
 flutter:
   uses-material-design: true
@@ -29,3 +30,12 @@ fonts:
   - family: Nunito
     fonts:
       - asset: fonts\Nunito-Regular.ttf
+
+msix_config:
+  display_name: Food Garden
+  publisher_display_name: Taveon
+  publisher: CN=D3D87653-3FF8-4160-9EE8-79798308FC41
+  identity_name: Taveon.FoodGarden
+  msix_version: 1.0.0.0
+  logo_path: C:\Users\Tjcam\FarmingApp\flutter_application\assets\FoodGardenAppLogo.png
+  store: true

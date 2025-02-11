@@ -8,6 +8,7 @@ void main() async {
   GardenDB gardenDB = GardenDB.instance;
   gardenDB.initialDb();
   runApp(MaterialApp(
+      title: 'Food Garden',
       theme: ThemeData(
           textSelectionTheme: TextSelectionThemeData(
               cursorColor: Colors.black,

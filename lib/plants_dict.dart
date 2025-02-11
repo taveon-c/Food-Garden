@@ -35,6 +35,7 @@ Map<String, Map<String, dynamic>> plantVarieties = {
   "Savoy Cabbage": {"harvest": 85, "ambientTemp": "60-65°F", "soilTemp": "45-75°F", "water": 2, "sun": 6},
   "Napa Cabbage": {"harvest": 70, "ambientTemp": "60-65°F", "soilTemp": "45-75°F", "water": 2, "sun": 6},
   "Bok Choy Cabbage": {"harvest": 45, "ambientTemp": "60-65°F", "soilTemp": "45-75°F", "water": 2, "sun": 6},
+  "Brussels Sprouts": {"harvest": 90, "ambientTemp": "60-75°F", "soilTemp": "45-75°F", "water": 4, "sun": 6},
 
   // Broccoli
   "Calabrese Broccoli": {"harvest": 85, "ambientTemp": "65-75°F", "soilTemp": "50-65°F", "water": 3, "sun": 6},
@@ -124,5 +125,15 @@ Map<String, Map<String, dynamic>> plantVarieties = {
   "Habanero Peppers": {"harvest": 90, "ambientTemp": "75-85°F", "soilTemp": "65-75°F", "water": 3, "sun": 8},
   "Poblano Peppers": {"harvest": 75, "ambientTemp": "70-85°F", "soilTemp": "65-75°F", "water": 3, "sun": 8},
   "Anaheim Peppers": {"harvest": 75, "ambientTemp": "70-85°F", "soilTemp": "65-75°F", "water": 3, "sun": 8},
+
+  // Asparagus
+  "Mary Washington Asparagus": {"harvest": 730, "ambientTemp": "65-85°F", "soilTemp": "50-70°F", "water": 3, "sun": 8},
+  "Jersey Giant Asparagus": {"harvest": 730, "ambientTemp": "65-85°F", "soilTemp": "50-70°F", "water": 3, "sun": 8},
+  "Purple Passion Asparagus": {"harvest": 730, "ambientTemp": "65-85°F", "soilTemp": "50-70°F", "water": 3, "sun": 8},
+
+  //Corn
+  "Golden Bantam Corn": {"harvest": 80, "ambientTemp": "65-85°F", "soilTemp": "60-70°F", "water": 3, "sun": 8},
+  "Hopi White Corn": {"harvest": 95, "ambientTemp": "65-90°F", "soilTemp": "60-75°F", "water": 3, "sun": 8},
+  "Glass Gem Corn": {"harvest": 105, "ambientTemp": "65-85°F", "soilTemp": "55-70°F", "water": 3, "sun": 8},
 };
 
